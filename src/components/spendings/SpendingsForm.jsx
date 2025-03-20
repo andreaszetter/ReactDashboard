@@ -14,7 +14,15 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
+
 } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { Input } from "@/components/ui/input";
 import useDataStore from "@/hooks/useDataStore";
 import { useEffect } from "react";
@@ -32,11 +40,12 @@ const formSchema = z.object({
 export default function SpendingsForm( {editingExpense} ) {
   const { addExpense, editExpense } = useDataStore();
   const { updateEditingExpense } = useEditStore();
+  const { categories } = useDataStore();
 
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-        spendingCategory: 'Games',
+        spendingCategory: '',
         dateSpent: getTodayString(),
         totalAmount: 1000,
     },
@@ -60,7 +69,7 @@ export default function SpendingsForm( {editingExpense} ) {
     reset({
       id: "-1",
       dateSpent: getTodayString(),
-      spendingCategory: 'Games',
+      spendingCategory: '',
       totalAmount: 1000,
     });
   }
@@ -74,9 +83,21 @@ export default function SpendingsForm( {editingExpense} ) {
           render={({ field }) => (
             <FormItem>
               <FormLabel>What did you spend money on?</FormLabel>
-              <FormControl>
-                <Input placeholder="Games" {...field} />
-              </FormControl>
+              
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl>
+                    <SelectTrigger className="w-[180px]">
+                      <SelectValue placeholder="Category"/>
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {categories.map((cat) => {
+                      return <SelectItem value={cat.category} key={cat.id}>{cat.category}</SelectItem>
+                      }
+                    )}
+                  </SelectContent>
+                </Select>
+              
               <FormMessage />
             </FormItem>
           )}
