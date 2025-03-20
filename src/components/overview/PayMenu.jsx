@@ -11,7 +11,7 @@ import useDataStore from "@/hooks/useDataStore"
 
 export default function PayMenu(){
     const {pay} = useDataStore();
-    
+
     return(
     <Popover>
       <PopoverTrigger asChild>
@@ -29,8 +29,8 @@ export default function PayMenu(){
             <div className="grid grid-cols-3 items-center gap-4">
               <Label htmlFor="width">Salary</Label>
               <Input
-                id="width"
-                defaultValue="100%"
+                id="pay"
+                defaultValue="1000"
                 className="col-span-2 h-8"
               />
             </div>
