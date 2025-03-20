@@ -31,8 +31,13 @@ import useEditStore from "@/hooks/useEditStore";
                 <p className="text-xl">${categoryTotalSpent}</p>
             </CardContent>
             <CardFooter className="p-0">
+              {window.location.pathname === "/categories" &&
+              <div>
                 <button className="bg-slate-300 px-2 text-xs py-0 my-0 rounded-md" onClick={()=>updateEditingCategory(category)}>Edit</button>
                 <button className="bg-red-500 px-2 text-xs py-0 my-0 rounded-md" onClick={()=>deleteCategory(category.id)} >Delete</button>
+              </div>
+              }
+                
             </CardFooter>
 
     </Card>
