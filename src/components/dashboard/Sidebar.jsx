@@ -29,7 +29,7 @@ const LINKS = [
 
 export default function Sidebar() {
   return (
-    <nav className="flex  flex-col p-6 md:px-8 md:pt-12 w-full md:max-w-[250px] bg-slate-200 md:min-h-screen h-fit">
+    <nav className="flex  flex-col p-6 md:px-8 md:pt-12 w-full md:max-w-[250px] bg-slate-200 md:min-h-screen h-fit ">
       <ul className="flex items-center md:items-start md:flex-col gap-y-12 gap-x-4 pb-2 md:p-0 overflow-x-scroll md:overflow-x-auto">
         {LINKS.map((link, index) => {
           return (
