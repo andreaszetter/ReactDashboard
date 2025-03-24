@@ -6,11 +6,21 @@ import {
     PopoverContent,
     PopoverTrigger,
   } from "@/components/ui/popover"
-
+import { useState } from "react"
 import useDataStore from "@/hooks/useDataStore"
 
 export default function PayMenu(){
-    const {pay} = useDataStore();
+    const { pay, updatePay } = useDataStore();
+    const [inputValue, setInputValue] = useState(pay || "1000");
+    
+    const handleInputChange = (e) => {
+        setInputValue(e.target.value);
+    };
+    
+    const handleSubmit = () => {
+        // Convert to number and make pay = inputValue
+        updatePay(Number(inputValue));
+    };
 
     return(
     <Popover>
@@ -27,14 +37,15 @@ export default function PayMenu(){
           </div>
           <div className="grid gap-2">
             <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="width">Salary</Label>
+              <Label htmlFor="pay">Salary</Label>
               <Input
                 id="pay"
-                defaultValue="1000"
+                value={inputValue}
+                onChange={handleInputChange}
                 className="col-span-2 h-8"
               />
             </div>
-            
+            <Button onClick={handleSubmit} className="mt-2">Save</Button>
           </div>
         </div>
       </PopoverContent>
