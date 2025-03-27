@@ -47,13 +47,13 @@ export default function SpendingInfo() {
           totalSpentCurrentMonth += expense.totalAmount;
         }
       });
-      
+      // makes an array with info about how the chart should look
       const categoryData = Object.keys(byCategory).map((category, index) => ({
         name: category,
         value: byCategory[category],
         fill: COLORS[index % COLORS.length]
       }));
-      
+      // similar to categoryData but this chart only need date and amount spent
       const monthlyData = Object.keys(byMonth).map(month => {
         const [year, monthNum] = month.split('-');
         return {
