@@ -18,7 +18,7 @@ export default function PayMenu(){
     };
     
     const handleSubmit = () => {
-        // Convert to number and make pay = inputValue
+        // Sets the salary based on input in popover
         updatePay(Number(inputValue));
     };
 

@@ -16,8 +16,7 @@ export default function BudgetPlanner() {
     }
     return {};
   });
-  
-  // Initialize budgets from localStorage on component mount
+  // Initialize budgets from localStorage
   useEffect(() => {
     if (Object.keys(savedBudgets).length > 0) {
       setBudgets(savedBudgets);

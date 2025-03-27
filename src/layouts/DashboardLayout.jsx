@@ -5,12 +5,12 @@ import PageTransition from "./animations/PageTransition";
 
 export default function DashboardLayout() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col h-screen">
       <Header />
 
-      <div className="flex flex-col md:flex-row w-full">
+      <div className="flex flex-col md:flex-row w-full ">
         <Sidebar />
-        <PageTransition>
+        <PageTransition >
           <Outlet />
         </PageTransition>
       </div>

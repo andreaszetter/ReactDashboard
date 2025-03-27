@@ -37,7 +37,7 @@ export default function SavingsTracker() {
         byMonth[monthKey].savings = byMonth[monthKey].income - byMonth[monthKey].expenses;
       });
       
-      // Transform into array for chart
+      // Add into an array so that they are usable by chart
       const savingsArray = Object.values(byMonth).map(monthData => ({
         name: monthData.month,
         savings: monthData.savings,
@@ -45,7 +45,7 @@ export default function SavingsTracker() {
         income: monthData.income
       }));
       
-      // Sort chronologically
+      // Sort by date
       savingsArray.sort((a, b) => {
         return new Date(a.name) - new Date(b.name);
       });

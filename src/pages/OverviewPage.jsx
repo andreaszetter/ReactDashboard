@@ -12,7 +12,7 @@ export default function OverviewPage() {
   const { pay } = useDataStore();
   
   return (
-    <div className="flex flex-col items-center gap-y-8 h-full w-full max-w-6xl mx-auto px-4 pb-16">
+    <div className="flex flex-col items-center gap-y-8 h-full w-full max-w-6xl mx-auto px-4 pb-16 ">
       <div className="w-full flex flex-col md:flex-row justify-between items-center gap-4 bg-slate-50 p-6 rounded-lg">
         <div>
           <h1 className="text-3xl font-bold">Financial Dashboard</h1>
