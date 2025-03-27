@@ -47,3 +47,15 @@ The app should now be running at `http://localhost:5173/`
 - **Charts & Analytics:** Visualize spending patterns with charts.  
 - **Authentication:** Add user authentication for personalized dashboards.  
 - **Export Data:** Enable CSV or PDF export of expense reports.    
+
+## **Andreas Changes**
+
+I added functionality to the overview page with Information about spending, a budget planner and a savings tracker. 
+The information part of the overview page has some charts that visually represent your spendings in categories. It also has
+a graph of how much has been spent per month. There is also a tab where you can allocate how much you want to budget for each
+of the categories and how much of your total salary will be saved. 
+I also changed the way that adding spendings works. Before you had to type the categories in each time, which was redundant
+since we already had a page for adding categories. I just changed the input to be a choice between existing categories so that
+it is easier for the user to document their spendings without having to type it each time.
+Other than that I have made some small tweaks to the UI, for example an indication of which of the pages in the sidebar you 
+are currently on, since before there was no such indicator which could be confusing for some users. 
