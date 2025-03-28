@@ -50,6 +50,12 @@ The app should now be running at `http://localhost:5173/`
 
 ## **Andreas Changes**
 
+# **Components:**
+
+- **SpendingInfo:** A component that displays an overview of your budgeting on the overview page.
+- **SavingsTracker:** A component that displays annual savings based on your monthly budget, a graph of trends based on income spending etc. and progress towards saving goals.
+- **BudgetPlanner:** A component taht allows the user to allocate spending of their salary towards categories (food etc.) per month.
+
 I added functionality to the overview page with Information about spending, a budget planner and a savings tracker. 
 The information part of the overview page has some charts that visually represent your spendings in categories. It also has
 a graph of how much has been spent per month. There is also a tab where you can allocate how much you want to budget for each
