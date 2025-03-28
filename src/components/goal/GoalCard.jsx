@@ -13,12 +13,15 @@ export default function GoalCard({ goal }) {
         <span className="font-semibold">{goal.endDate}</span>
       </p>
       <p className="font-medium text-gray-600">${goal.target}</p>
+      
+      {window.location.pathname === "/goals" &&
       <div className="flex justify-between mt-8">
         <Button onClick={() => deleteGoal(goal.id)} variant="destructive">
           Delete
         </Button>
         <Button onClick={() => updateEditingGoal(goal)}>Edit</Button>
-      </div>
+      </div>}
+      
     </div>
   );
 }
